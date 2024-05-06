@@ -23,20 +23,23 @@ module.exports = () => {
         title: 'JATE - Just Another Text Edit',
       }),
       new WebpackPwaManifest({
-        fingerprints: false,
-        inject: true,
+        // inject: true,
         name: 'Just Another Text Editor',
         short_name: 'JATE',
         description: 'Text editor on the browser.',
         background_color: '#225ca3',
         theme_color: '#225ca3',
-        start_url: './',
-        publicPath: './',
+        publicPath: '/',
+        display: 'standalone',
         icons: [
           {
             src: path.resolve('src/images/logo.png'),
             sizes: [96, 128, 192, 256, 384, 512],
             destination: path.join('assets', 'icons'),
+          },
+          {
+            src: path.resolve('favicon.ico'),
+            size: '48x48',
           },
         ],
       }),
@@ -51,6 +54,10 @@ module.exports = () => {
         {
           test: /\.css$/i,
           use: ['style-loader', 'css-loader'],
+        },
+        {
+          test: /\.(png|svg|jpg|jpeg|gif|ico)$/i,
+          type: 'asset/resource',
         },
         {
           test: /\.m?js$/,
