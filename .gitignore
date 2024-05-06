@@ -1,7 +1,7 @@
-/node_modules
+node_modules/
 .DS_Store
 /*.env
 package-lock.json
 dist/
+/node_modules
 npm-debug.log
-
