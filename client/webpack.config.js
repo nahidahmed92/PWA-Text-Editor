@@ -23,13 +23,15 @@ module.exports = () => {
         title: 'JATE - Just Another Text Edit',
       }),
       new WebpackPwaManifest({
-        // inject: true,
+        fingerprints: false,
+        inject: true,
         name: 'Just Another Text Editor',
         short_name: 'JATE',
         description: 'Text editor on the browser.',
         background_color: '#225ca3',
         theme_color: '#225ca3',
-        publicPath: '/',
+        start_url: './',
+        publicPath: './',
         display: 'standalone',
         icons: [
           {
