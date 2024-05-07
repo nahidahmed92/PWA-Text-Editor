@@ -31,8 +31,14 @@ export const getDb = async () => {
   const store = trans.objectStore('jate');
   const request = store.getAll();
   const result = await request;
-  console.log('result.value', result);
-  return result;
+  console.log('result', result);
+
+  if (!result.length) {
+    return null;
+  }
+
+  console.log('result content', result[result.length - 1].content);
+  return result[result.length - 1].content;
 };
 
 initdb();
