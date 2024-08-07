@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "server": "nodemon server.js --ignore client"
+    "server": "nodemon index.js --ignore client"
   },
   "keywords": [],
   "author": "Nahid Ahmed",
